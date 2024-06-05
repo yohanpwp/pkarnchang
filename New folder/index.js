@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 //parse application/json
 app.use(bodyParser.json());
 // อนุญาตให้นำไฟล์ประเภทform-dataเข้า
-
+app.use('/',upload(ImageData));
 //สร้าง Function ใหม่ให้กับ express
 app.use(require('./configs/config'));
 //สร้าง router ที่ขึ้นต้นด้วย /api
