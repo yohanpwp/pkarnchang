@@ -1,2 +1,11 @@
-<h1>ฝึกเขียนโปรแกรมเฉยๆครับ<h1/>
-1.แทรกรูปในไฟล์ข้อมูล
+
+# Training
+
+ฝึกการใช้งานเขียนโปรแกรม
+
+
+
+## Authors
+
+- [@pkarnchang](https://www.github.com/pkarnchang)
+
