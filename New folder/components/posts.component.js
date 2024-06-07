@@ -47,7 +47,7 @@ class PostsComponent {
                 value.post_name ,
                 value.post_detail 
             ]);
-            const data = await this.selectOne(item.insertId)
+            const data = await this.selectOne(item.insertId) 
             return data ;
             
         } catch (error) {
