@@ -1,17 +1,36 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+const multer = require('multer');
+ 
 const app = express();
-// public ให้กับ client folder
-app.use('/', express.static(__dirname + '/client'));
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
-// parse application/json
-app.use(bodyParser.json());
-// สร้าง Function ใหม่ให้กับ express
-app.use(require('./configs/config'));
-// สร้าง router ที่ขึ้นต้นด้วย /api
-app.use('/api', require('./configs/route'));
-// หน้าแรกของเว็บไซต์จะใช้ไฟล์ client/index.html
-app.get('/', (req, res) => res.sendFile(__dirname + '/client/index.html'));
-// เปิด port 3000 เพื่อ run server
-app.listen(3000, () => console.log('Example app listening on port 3000!'));
+ 
+// Set up Multer to handle file uploads
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'uploads/'); // Uploads will be stored in the 'uploads' directory
+    },
+    filename: function (req, file, cb) {
+        cb(null, Date.now() + path.extname(file.originalname)); // Unique filename to avoid overwriting
+    }
+});
+ 
+const upload = multer({ storage: storage });
+ 
+app.get('/', (req, res) => {
+    res.send('Hello from server')
+})
+ 
+// Define the file upload endpoint
+app.post('/api/files/upload', upload.single('file'), (req, res) => {
+    // Access the uploaded file information from req.file
+    const fileName = req.file.filename;
+ 
+    // Store the file into file system / database (if needed)
+ 
+    // Send the response
+    res.status(200).json({ message: `File uploaded successfully: ${fileName}` });
+});
+ 
+// Start the server
+app.listen(8000, () => {
+    console.log("Server is running on port 8000");
+});

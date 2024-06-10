@@ -9,7 +9,7 @@ const storage = multer.diskStorage({
       callback(null, file.originalname) //ให้ใช้ชื่อไฟล์ original เป็นชื่อหลังอัพโหลด
     },
   })
-const upload = multer({storage});
+const upload = multer({storage : storage});
 const app = express();
 //เปิด public ให้กับ client folder
 app.use('/', express.static(__dirname + '/client'));
@@ -20,16 +20,19 @@ app.use(bodyParser.json());
 //parse application/form-data
 app.use(upload.any());
 // ส่งรูปภาพเข้ามาเก็บในโฟลเดอร์
-app.post('/upload',upload.single(),(req,res)=>{
+app.post('/upload',upload.single('file'),(req,res)=>{
+  const file = req.file ;
   // # The req.file will contain your file data
   // # The req.body will contain your text data
-  console.log(req.file, req.body.name)
-  res.status(200).json("ok")
+  console.log(file, req.body.name)
+  res.status(200).json("message: `File uploaded successfully: ${file}` ")
 })
 // ส่งรูปภาพหลายรูปเข้ามาเก็บในโฟลเดอร์
-app.post('/upload',upload.array(),(req,res)=>{
-  console.log(req.files, req.body.name)
-  res.status(200).json("ok")
+app.post('/upload',upload.array('file'),(req,res)=>{
+  const files = req.files ;
+  console.log(files, req.body.name)
+  res.status(200).json("message: `File uploaded successfully: ${files}` ")
+  return files
 })
 //สร้าง Function ใหม่ให้กับ express
 app.use(require('./configs/config'));
