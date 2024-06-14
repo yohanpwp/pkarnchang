@@ -7,3 +7,9 @@ app.get('/', (req, res) => res.status(200).sendFile(__dirname + '/testing/calcul
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
 });
+
+var today = new Date() ;
+
+console.log(today.toLocaleTimeString());
+    
+
