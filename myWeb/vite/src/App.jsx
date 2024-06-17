@@ -6,7 +6,8 @@ import Header from '../components/Header.jsx'
 import Checkbox from '../components/Checkbox.jsx'
 import FormatToday from '../components/Dates.jsx'
 import Time from '../components/Time.jsx'
-import Video from '../components/video.jsx'
+import Video from '../components/Video.jsx'
+import { Link } from'react-router-dom'
 
 
 function App() {
@@ -30,11 +31,15 @@ function App() {
 
   return (
     <>
+      <Link to="about">About Us</Link>
       <div>
         <Header />
           <Video
           isPlaying={isPlaying}
           src='https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4'/>
+          <iframe width="720" height="480" src="https://www.youtube.com/embed/4tzmynf93p8?si=-ZkZ2TVK1RFTfI7G" title="YouTube video player" 
+          frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+           referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
           <div>
             <button onClick={() => setIsPlaying(!isPlaying)}>{isPlaying ? 'Pause' : 'Play'}</button>
           </div>
@@ -51,10 +56,13 @@ function App() {
             })}
           </div> 
           <div>
+            {/* บอกวันที่ */}
             <h6>{FormatToday()}</h6>
           </div>
           <div>
+            {/* บอกวันที่และเวลาปัจจุบัน */}
             <Time />
+            <img src= {reactLogo} />
           </div>
       </div>
     </>

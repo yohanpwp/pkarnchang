@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 
-export default function VideoPlayer({ src, isPlaying }) {
+function VideoPlayer({ src, isPlaying }) {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -13,5 +13,11 @@ export default function VideoPlayer({ src, isPlaying }) {
 
   return <video ref={ref} src={src} loop playsInline />;
 }
+// Validate ประเภทไฟล์ที่จะเอาเข้า ต้องติดตั้ง propTypes
+// VideoPlayer.propTypes = {
+//   src: PropTypes.string.isRequired,
+//   isPlaying: PropTypes.bool.isRequired,
+// };
 
+export default VideoPlayer ;
 

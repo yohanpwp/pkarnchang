@@ -10,6 +10,9 @@ app.listen(3000, () => {
 
 var today = new Date() ;
 
-console.log(today.toLocaleTimeString());
+let x=console.log(today.toLocaleTimeString());
+const person = {firstName: 'Peerawith', lastName: 'Tangmanosopa', email:'peewawith@verismart.co.th'};
+console.log (person.firstName+' '+person.lastName);
+console.log (person.email);
     
 
