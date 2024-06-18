@@ -23,9 +23,12 @@ class Time extends Component {
 
     
     render() {
-        return (<div>
-            <h3>{this.state.date.toLocaleDateString()} {this.state.date.toLocaleTimeString()}</h3>
+        return (
+        <div className='container-fluid'>
+            <div className='row'>
+            <small><h5 className='col-md-4 text-right'>{this.state.date.toLocaleDateString()} {this.state.date.toLocaleTimeString()}</h5></small>
             </div>
+        </div>
         )
     }
 

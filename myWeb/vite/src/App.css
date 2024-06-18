@@ -33,6 +33,19 @@
   }
 }
 
+@font-face {
+  font-family: 'Prompt-Regular';
+  src: url(/public/fonts/Prompt-Regular.ttf);
+}
+@font-face {
+  font-family: 'Prompt-Bold';
+  src: url(/public/fonts/Prompt-Bold.ttf);
+}
+@font-face {
+  font-family: 'Prompt-Medium';
+  src: url(/public/fonts/Prompt-Medium.ttf);
+}
+
 .card {
   padding: 2em;
 }

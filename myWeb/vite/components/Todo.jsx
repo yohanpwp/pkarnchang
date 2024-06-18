@@ -6,16 +6,16 @@ export default function Todo() {
     const [isLoading, setIsLoading] = useState(0);
     async function fetchTodo () {
         try{
-            const response =  await axios.get("https://jsonplaceholder.typicode.com/todos");
+            const response =  await axios.get("https://667008e90900b5f8724922a6.mockapi.io/v1/userList");
             setTodos([response.data]);
             setIsLoading(false);
         }
         catch(error) {console.log('error',error);}
     };
-    async function deleteTodo () {
+    async function deleteTodo (id) {
         try {
             setIsLoading(true);
-            await axios.delete("https://jsonplaceholder.typicode.com/todos/${id}");
+            await axios.delete("https://667008e90900b5f8724922a6.mockapi.io/v1/userList/:id");
             await fetchTodo();
             setIsLoading(false);
         }
@@ -27,11 +27,10 @@ export default function Todo() {
     return (
     <>
         {isLoading && (<div>Loading...</div>)}
-        {!isLoading && 
-        <div>
-            {todos.map((todos,index) => (
+        {!isLoading && <div>
+            {todos.map((todo,index) => (
                 <div key={index}>
-                    {todos.id} {todos.title} {todos.completed}
+                    {todo.id} {todo.title} {todo.completed}
                 <button>Edit</button>
                 <button onClick={async() => {await deleteTodo(todos.id)}}>Delete</button>
                 </div>

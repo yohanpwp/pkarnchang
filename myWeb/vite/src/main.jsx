@@ -6,6 +6,7 @@ import Root from './routes/root.jsx'
 import ErrorPage from './routes/error-page.jsx'
 import Contact from "./routes/contact";
 import Todo from "../components/Todo.jsx";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -24,13 +25,17 @@ const router = createBrowserRouter([
     element: (
       <div>
         <h1>Hello World</h1>
-        <Link to="about">About Us</Link>
+        <Link to="contact">Contact Us</Link>
       </div>
     ),
   },
   {
-    path: "about",
-    element: <div>About</div>,
+    path: "/about/contact",
+    element: <div className='container-fluid'>
+      <h1>About the author</h1>
+      <hr/><h2>pkarnchang "มือใหม่แต่ก็เก๋าพอตัวนะ"</h2>
+      <span className='text-danger'>Powered by Verismart</span>
+      </div>,
   },
   {
     path: "/api",

@@ -19,11 +19,11 @@ app.get('/', (req, res) => {
 })
 // uploadรูปภาพรูปเดียว
 app.post('/upload', upload.single('photo'), (req, res) => {
-  res.send(req.file)
+  res.status(201).send(req.file)
 })
 // uploadรูปภาพหลายรูป
 app.post('/images', upload.array('images'), (req, res) => {
-  res.send(req.file)
+  res.status(201).send(req.file)
 })
 
 app.listen(9999, () => console.log('Running on port 9999'))
