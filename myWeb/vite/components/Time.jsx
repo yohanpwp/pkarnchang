@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 class Time extends Component {
 
@@ -26,7 +27,7 @@ class Time extends Component {
         return (
         <div className='container-fluid'>
             <div className='row'>
-            <small><h5 className='col-md-4 text-right'>{this.state.date.toLocaleDateString()} {this.state.date.toLocaleTimeString()}</h5></small>
+            <small><h5 className='col-md-4 text-right' color='#3B7EE5'>{this.state.date.toLocaleDateString()} {this.state.date.toLocaleTimeString()}</h5></small>
             </div>
         </div>
         )

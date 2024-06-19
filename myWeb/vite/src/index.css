@@ -30,6 +30,20 @@ body {
   min-height: 100vh;
 }
 
+.topleft {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 18px;
+}
+
+.topright {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;

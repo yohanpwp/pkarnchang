@@ -6,6 +6,8 @@ import Root from './routes/root.jsx'
 import ErrorPage from './routes/error-page.jsx'
 import Contact from "./routes/contact";
 import Todo from "../components/Todo.jsx";
+import Payment from "../components/Payment/Payment.jsx" ;
+import Store from '../components/Store/Store.jsx'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import {
   createBrowserRouter,
@@ -49,6 +51,15 @@ const router = createBrowserRouter([
     path: "/todo",
     element: <Todo />,
   },
+  {
+    path: "/payment",
+    element: <Payment />,
+  },
+  {
+    path: "/store",
+    element: <Store />,
+  },
+
 ]);
 
 createRoot(document.getElementById("root")).render(

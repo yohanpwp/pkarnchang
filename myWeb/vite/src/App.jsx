@@ -31,9 +31,11 @@ function App() {
 
   return (
     <>
+      <Link className='topleft' to = '/payment'>Payment</Link>
       <Link to="about">About Us</Link>
+      <Link className="topright" to="/api">ข้อมูลผู้ใช้งาน</Link>
       <div>
-        <Header />
+          <Header />
           <Video
           isPlaying={isPlaying}
           src='https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4'/>
