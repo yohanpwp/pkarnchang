@@ -2,12 +2,13 @@ import React from 'react'
 import ReactDOM, { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import Root from './routes/root.jsx'
-import ErrorPage from './routes/error-page.jsx'
+import Root from './routes/root.jsx';
+import ErrorPage from './routes/error-page.jsx';
 import Contact from "./routes/contact";
 import Todo from "../components/Todo.jsx";
 import Payment from "../components/Payment/Payment.jsx" ;
-import Store from '../components/Store/Store.jsx'
+import Orders from './container/order/Orders.jsx'
+import Product from './container/product/Product.jsx';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import {
   createBrowserRouter,
@@ -15,6 +16,8 @@ import {
   Route,
   Link,
 } from "react-router-dom";
+import NotFound from './container/error/NotFound.jsx';
+import Shop from '../components/Store/Shop.jsx';
 
 const router = createBrowserRouter([
   {
@@ -57,7 +60,15 @@ const router = createBrowserRouter([
   },
   {
     path: "/store",
-    element: <Store />,
+    element: <Shop />,
+  },
+  {
+    path: "/store/orders",
+    element: <Orders />,
+  },
+  {
+    path: "/products",
+    element: <Product />,
   },
 
 ]);

@@ -15,4 +15,18 @@ const person = {firstName: 'Peerawith', lastName: 'Tangmanosopa', email:'peewawi
 console.log (person.firstName+' '+person.lastName);
 console.log (person.email);
     
+const ratingObj = {
+    rating: [],
+    rateIt(rating) {
+        if(rating) {
+            this.rating.push(rating);
+        }
+        const total = this.rating.reduce((x, y) => x+y);
+        return total / this.rating.length;
+    }
+}
+ratingObj.rateIt(5);
+ratingObj.rateIt(5);
+ratingObj.rateIt(5);
 
+console.log(ratingObj.rateIt(10));

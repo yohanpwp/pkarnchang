@@ -7,7 +7,7 @@ import Checkbox from '../components/Checkbox.jsx'
 import FormatToday from '../components/Dates.jsx'
 import Time from '../components/Time.jsx'
 import Video from '../components/Video.jsx'
-import { Link } from'react-router-dom'
+import { Route,Link } from'react-router-dom'
 
 
 function App() {
