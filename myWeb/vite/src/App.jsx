@@ -1,13 +1,12 @@
-import { useState } from 'react'
+import React ,{ useState } from 'react'
 import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Header from '../components/Header.jsx'
 import Checkbox from '../components/Checkbox.jsx'
 import FormatToday from '../components/Dates.jsx'
 import Time from '../components/Time.jsx'
 import Video from '../components/Video.jsx'
-import { Route,Link } from'react-router-dom'
+import Footer from '../components/Footer.jsx'
 
 
 function App() {
@@ -31,10 +30,8 @@ function App() {
 
   return (
     <>
-      <Link className='topleft' to = '/payment'>Payment</Link>
-      <Link to="about">About Us</Link>
-      <Link className="topright" to="/api">ข้อมูลผู้ใช้งาน</Link>
       <div>
+        <div className="container">
           <Header />
           <Video
           isPlaying={isPlaying}
@@ -43,7 +40,7 @@ function App() {
           frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
            referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
           <div>
-            <button onClick={() => setIsPlaying(!isPlaying)}>{isPlaying ? 'Pause' : 'Play'}</button>
+            <button onClick={() => setIsPlaying(!isPlaying)}>{isPlaying? 'Pause' : 'Play'}</button>
           </div>
           <div>Now counter is {count}</div>
           
@@ -66,6 +63,10 @@ function App() {
             <Time />
             <img src= {reactLogo} />
           </div>
+      </div>
+      </div>
+      <div className='container-fluid'>
+            <Footer />
       </div>
     </>
   )

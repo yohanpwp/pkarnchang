@@ -13,7 +13,7 @@ const withRouter = (Component) =>{
     return Wrapper;
 }
 
-class Product extends React.Component {
+class Product extends Component {
     constructor(props) {
         super(props);
         this.state = {products:[]};

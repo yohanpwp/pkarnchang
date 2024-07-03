@@ -32,15 +32,14 @@ const router = createBrowserRouter([
         <h1>Hello World</h1>
         <Link to="contact">Contact Us</Link>
       </div>
-    ),
+        ),
   },
-  {
-    path: "/about/contact",
-    element: <div className='container-fluid'>
+  { path: "/about/contact",
+    element: (<div className='container-fluid'>
       <h1>About the author</h1>
       <hr/><h2>pkarnchang "มือใหม่แต่ก็เก๋าพอตัวนะ"</h2>
       <span className='text-danger'>Powered by Verismart</span>
-      </div>,
+      </div>) 
   },
   {
     path: "/api",

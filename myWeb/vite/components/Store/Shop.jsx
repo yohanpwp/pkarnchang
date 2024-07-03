@@ -38,7 +38,7 @@ class Shop extends Component {
     return (
       <div>
         <Header />
-        <Monitor products={this.props.products} />
+        <Monitor products={this.state.products} />
         <Footer company="Firefly" email="MC@harmony.com" />
       </div>
     );
